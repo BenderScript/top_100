@@ -84,7 +84,9 @@ def access_domains(top_100):
     for entry in top_100:
         try:
             url = entry.get('Domainname')
-            response = requests.get(url)
+            response = requests.get(url, timeout=5)
+        except requests.exceptions.Timeout:
+            print(f"The request for {url} timed out")
         except requests.exceptions.ConnectionError:
             print(f"domain: {url} connection error")
         except requests.exceptions.MissingSchema:
