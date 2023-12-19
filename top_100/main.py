@@ -20,7 +20,7 @@ def is_valid_url(url):
         return False
 
 
-def html_table_to_list(url, num_columns=5):
+def html_table_to_list(url, num_columns=6):
     """
     Convert an HTML table to a list of dictionaries.
 
